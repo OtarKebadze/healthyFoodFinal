@@ -1,3 +1,29 @@
+.contenedor__navbar{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
 .navbar{
     border: 2px solid black;
+    border-radius: 2rem;
+    background-color: cyan;
+    width: 1000px;
+    height: 80px;
+}
+.navbar__links{
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+}
+.titulo{
+    background-color: black;
+    color: white;
+    border: 1px black solid;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+.contenedor__navbar img{
+    width: 70px;
+    height: 70px;
 }
