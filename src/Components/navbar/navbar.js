@@ -1,6 +1,6 @@
 import "./navbar.css"
 import imagen from "./carrito-de-supermercado.png"
-
+import imagenNombre from "./nombreEmpresa.png"
 
 function NavBar (){
 return(
@@ -9,6 +9,7 @@ return(
 <ul className="navbar__links">
 <div><a href="#" className="titulo">Inicio</a></div>
 <div><a href="#" className="titulo">Sobre Nosotros</a></div>
+<img className="nombreEmpresa" src={imagenNombre}/>
 <div><a href="#" className="titulo">Productos</a></div>
 <div><a href="#" className="titulo">Contacto</a></div>
 </ul>
