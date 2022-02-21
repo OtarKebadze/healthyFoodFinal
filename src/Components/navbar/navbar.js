@@ -1,5 +1,5 @@
+import CartWidget from "./CartWidget.js"
 import "./navbar.css"
-import imagen from "./carrito-de-supermercado.png"
 import imagenNombre from "./nombreEmpresa.png"
 
 function NavBar (){
@@ -14,7 +14,7 @@ return(
 <div><a href="#" className="titulo">Contacto</a></div>
 </ul>
 </nav>
-<img src={imagen}/>
+<CartWidget/>
 </div>
 )
 }
