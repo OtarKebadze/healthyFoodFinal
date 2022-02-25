@@ -1,21 +1,41 @@
-.contenedorLista{
-border: 1px solid black;
-margin-top: 3rem;
+
+.contenedorCard{
 display: flex;
+flex-direction: column;
 justify-content: center;
 align-items: center;
-height: 500px;
+padding: 1rem;
+}
+.contenedorImagen{
+border: 1px solid black;
+margin-top: 3rem;
+height: fit-content;
+width: fit-content;
 }
 .contenedorContador{
-    background-color: white;
-    height: 100px;
-    width: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: fit-content;
 }
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
 -webkit-appearance: none; 
 margin: 0; 
+}
+.contenedorCompra{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedorImagen img{
+    height: 10rem;
+    width: 15rem;
+}
+.contenedorLista{
+    margin-top: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+}
+.contenedorDescripcion, .contenedorProducto{
+    text-align: center;
 }
