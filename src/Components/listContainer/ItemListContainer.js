@@ -5,7 +5,7 @@ import "./listcontainer.css"
 
 function ItemListContainer() {
     return(
-    <div>
+    <div className="contenedorLista">
     <ItemList />
     </div>
     )

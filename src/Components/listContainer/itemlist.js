@@ -17,26 +17,25 @@ function ItemList(){
     
     },[])
     return(
-
-    <div className="contenedorLista">
+<>  
     { load  ? <h1> Cargando....</h1>
             :
-
-    prods.map((item)=>
-    <>
-    <div className="contenedorCard">
-    <div className="contenedorProducto"><p key={item.id}>{item.nombre} ${item.precio}</p></div>
-    <hr/>
-    <section className="contenedorImagen"><img src={item.img}/></section>
-    <p className="contenedorDescripcion">{item.descripcion}</p>
-    <div className="contenedorCompra"><ItemCount/><button>Añadir Al Carrito</button></div>
-    </div>
-    </>
-    )
-    }
-    </div>
     
-    )
-}
+    prods.map((item)=>
+            <div>
+            <div className="contenedorProducto"><p>{item.nombre} ${item.precio}</p></div>
+            <hr/>
+            <div className="contenedorCard" key={item.id}>
+            <section className="contenedorImagen"><img src={item.img}/></section>
+            <p className="contenedorDescripcion">{item.descripcion}</p>
+            <div className="contenedorCompra"><ItemCount/><button>Añadir Al Carrito</button></div>
+            </div>
+            </div>
+            )
+    }
+    
+)
+</>
+    )}
 
 export default ItemList
