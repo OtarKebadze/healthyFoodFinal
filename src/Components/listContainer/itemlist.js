@@ -1,6 +1,7 @@
 import { useState , useEffect } from "react";
 import { getFetch } from "./item";
 import ItemCount from "./itemcount";
+import logo from "./img/carga.gif";
 
 
 function ItemList(){
@@ -14,13 +15,11 @@ function ItemList(){
     .then((resp)=> setProds(resp))
     .catch(err=>console.log(err))
     .finally(()=>setLoad(false))
-    
-    },[])
-    return(
+                    },[])
+return(
 <>  
-    { load  ? <h1> Cargando....</h1>
+    { load  ? <img src={logo} />
             :
-    
     prods.map((item)=>
             <div>
             <div className="contenedorProducto"><p>{item.nombre} ${item.precio}</p></div>
@@ -33,9 +32,8 @@ function ItemList(){
             </div>
             )
     }
-    
-)
 </>
-    )}
+)
+}
 
 export default ItemList
