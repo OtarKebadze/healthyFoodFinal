@@ -23,7 +23,7 @@ function ItemCount() {
     <div className="contenedorContador">
     <div>
     <button onClick={restarContador}>-</button>
-    <input type="number" value= {cont} stock={stock} min="1"/>
+    <label className="contador">{cont}</label>
     <button onClick={sumarContador}>+</button>
     </div>
     </div>
