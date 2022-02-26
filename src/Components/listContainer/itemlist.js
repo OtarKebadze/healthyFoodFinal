@@ -21,13 +21,11 @@ return(
     { load  ? <img src={logo}/>
             :
             prods.map((item)=>
-            <div key={item.id}>
-            <div className="contenedorCard">
+            <div className="contenedorCard" key={item.id}>
             <div className="contenedorProducto"><p>{item.nombre} ${item.precio}</p></div>
             <section className="contenedorImagen"><img src={item.img}/></section>
             <p className="contenedorDescripcion">{item.descripcion}</p>
             <div className="contenedorCompra"><ItemCount/><button>Añadir Al Carrito</button></div>
-            </div>
             </div>
             )
             
