@@ -18,19 +18,19 @@ function ItemList(){
                     },[])
 return(
 <>  
-    { load  ? <img src={logo} />
+    { load  ? <img src={logo}/>
             :
-    prods.map((item)=>
-            <div>
+            prods.map((item)=>
+            <div key={item.id}>
+            <div className="contenedorCard">
             <div className="contenedorProducto"><p>{item.nombre} ${item.precio}</p></div>
-            <hr/>
-            <div className="contenedorCard" key={item.id}>
             <section className="contenedorImagen"><img src={item.img}/></section>
             <p className="contenedorDescripcion">{item.descripcion}</p>
             <div className="contenedorCompra"><ItemCount/><button>Añadir Al Carrito</button></div>
             </div>
             </div>
             )
+            
     }
 </>
 )
