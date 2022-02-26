@@ -25,7 +25,7 @@ function ItemList(){
     prods.map((item)=>
     <>
     <div className="contenedorCard">
-    <div className="contenedorProducto" key={item.id}>{item.nombre} ${item.precio}</div>
+    <div className="contenedorProducto"><p key={item.id}>{item.nombre} ${item.precio}</p></div>
     <hr/>
     <section className="contenedorImagen"><img src={item.img}/></section>
     <p className="contenedorDescripcion">{item.descripcion}</p>
