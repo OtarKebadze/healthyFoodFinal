@@ -1,11 +1,12 @@
 .contenedorCarrito{
-    background-color: white;
     height: fit-content;
     width: fit-content;
     margin:1rem 0rem 0rem 2rem;
     padding-right: 1rem;
     border-radius: 1rem;
-    background-color: cyan;
+    background-color:#14793e9d;
+    filter: drop-shadow(4px 5px 2px black);
+    color: white;
 }
 .contenedor__navbar div img{
     width: 50px;

@@ -6,7 +6,7 @@
 
 .navbar{
     border-radius: 2rem;
-    background-color: cyan;
+    background-color: #14793e9d;
     width: 1000px;
     height: 80px;
 }
@@ -14,11 +14,12 @@
     margin-top: 1.5rem;
     display: flex;
     justify-content: space-around;
-    filter: drop-shadow(4px 5px 2px rgb(99, 98, 98));
+    filter: drop-shadow(4px 5px 2px rgb(0, 0, 0));
 }
 .titulo{
-    background-color: black;
-    color: white;
+    background-color: #38c0877c;
+    color: black;
+    font-weight: 1000;
     border: 1px black solid;
     border-radius: 1rem;
     padding: 1rem;
@@ -29,8 +30,7 @@
 
 }
 .contenedor__navbar nav ul img{
-    border: cyan solid 10px;
-    background-color: cyan;
+    margin-top: -20px;
     width: 300px;
     border-radius: 1rem;
 }
