@@ -22,10 +22,11 @@ return(
             :
             prods.map((item)=>
             <div className="contenedorCard" key={item.id}>
-            <div className="contenedorProducto"><p>{item.nombre} ${item.precio}</p></div>
+            <div className="contenedorProducto"><p>{item.nombre}</p></div>
+            <div className="contenedorPrecio"><p>${item.precio}</p></div>
             <section className="contenedorImagen"><img src={item.img}/></section>
             <p className="contenedorDescripcion">{item.descripcion}</p>
-            <div className="contenedorCompra"><ItemCount/><button>Añadir Al Carrito</button></div>
+            <div className="contenedorCompra"><ItemCount/></div>
             </div>
             )
             

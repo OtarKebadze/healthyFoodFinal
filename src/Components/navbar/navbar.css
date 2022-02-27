@@ -14,6 +14,7 @@
     margin-top: 1.5rem;
     display: flex;
     justify-content: space-around;
+    filter: drop-shadow(4px 5px 2px rgb(99, 98, 98));
 }
 .titulo{
     background-color: black;
@@ -25,11 +26,11 @@
 .contenedor__navbar img{
     width: 70px;
     height: 70px;
-    filter: drop-shadow(10px 5px 2px rgb(99, 98, 98));
+
 }
 .contenedor__navbar nav ul img{
     border: cyan solid 10px;
     background-color: cyan;
     width: 300px;
-    border-radius: 1rem ;
+    border-radius: 1rem;
 }

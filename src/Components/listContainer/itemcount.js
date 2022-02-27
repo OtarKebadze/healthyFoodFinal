@@ -21,11 +21,9 @@ function ItemCount() {
     
     return(
     <div className="contenedorContador">
-    <div>
-    <button onClick={restarContador}>-</button>
-    <label className="contador">{cont}</label>
-    <button onClick={sumarContador}>+</button>
-    </div>
+    <button onClick={restarContador} className="boton">-</button>
+    <label >{cont}</label>
+    <button onClick={sumarContador} className="boton">+</button>
     </div>
     )
 }
