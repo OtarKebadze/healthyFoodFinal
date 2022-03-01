@@ -2,7 +2,7 @@ import {useState} from "react";
 import "./listcontainer.css"
 
 function ItemCount() {
-    const [cont, setCont] = useState(1);
+    const [cont, setCont] = useState(0);
     let stock=10;
     const sumarContador= ()=>{
         if(cont >= stock){
@@ -12,7 +12,7 @@ function ItemCount() {
         }
     }
     const restarContador = ()=>{
-        if(cont <= 1){
+        if(cont <= 0){
             alert ("EL MINIMO DE COMPRA ES DE 1")
         }else{
             setCont(cont-1);
