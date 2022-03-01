@@ -5,7 +5,7 @@ function ItemCount() {
     const [cont, setCont] = useState(1);
     let stock=10;
     const sumarContador= ()=>{
-        if(cont >= 10){
+        if(cont >= stock){
             alert ("NO DISPONEMOS DE MAS EN STOCK")
         }else{
             setCont(cont+1);
