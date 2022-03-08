@@ -15,7 +15,7 @@ function ItemList(){
     .then((resp)=> setProds(resp))
     .catch(err=>console.log(err))
     .finally(()=>setLoad(false))
-                    },[])
+            },[])
 return(
 <>  
     { load  ? <img src={logo}/>

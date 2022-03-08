@@ -64,3 +64,14 @@ margin: 0;
     width: 100%;
     font-weight: 1000;
 }
+.contenedorElemento{
+    border: 10px solid white;
+    background-color: white;
+    text-align: center;}
+.contenedorElemento section img{
+    width: 50%;
+}
+.contenedorContadorElemento{
+    display: flex;
+    justify-content: center;
+}
