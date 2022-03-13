@@ -1,17 +1,17 @@
 import CartWidget from "./CartWidget.js"
 import "./navbar.css"
 import imagenNombre from "./nombreEmpresa.png"
+import {NavLink} from "react-router-dom"
+import Cart from "./cart.js"
 
 function NavBar (){
 return(
 <div className="contenedor__navbar">
 <nav className="navbar">
 <ul className="navbar__links">
-<div><a href="/" className="titulo">Inicio</a></div>
-<div><a href="/" className="titulo">Sobre Nosotros</a></div>
+<div><NavLink to="/" className="titulo">Inicio</NavLink></div>
 <img className="nombreEmpresa" src={imagenNombre}/>
-<div><a href="/" className="titulo">Productos</a></div>
-<div><a href="/" className="titulo">Contacto</a></div>
+<div><NavLink to="/Cart" className="titulo">Carrito</NavLink></div>
 </ul>
 </nav>
 <CartWidget/>

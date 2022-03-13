@@ -1,6 +1,7 @@
 import "./listcontainer.css"
 import ItemCount from "./itemcount"
 
+
 function ItemDetail({element}){
         return (
         <>

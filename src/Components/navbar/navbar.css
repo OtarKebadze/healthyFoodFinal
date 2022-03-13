@@ -34,3 +34,11 @@
     width: 300px;
     border-radius: 1rem;
 }
+.prueba{
+    border: 1px solid black;
+    background-color: white;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

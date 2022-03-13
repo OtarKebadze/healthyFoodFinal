@@ -6,7 +6,7 @@ function ItemCount() {
     let stock=10;
     const sumarContador= ()=>{
         if(cont >= stock){
-            alert ("NO DISPONEMOS DE MAS EN STOCK")
+            alert ("NO DISPONEMOS DE MAS U. EN STOCK")
         }else{
             setCont(cont+1);
         }
@@ -24,6 +24,7 @@ function ItemCount() {
     <button onClick={restarContador} className="boton">-</button>
     <label >{cont}</label>
     <button onClick={sumarContador} className="boton">+</button>
+    <button className="boton">Agregar a Carrito</button>
     </div>
     )
 }
