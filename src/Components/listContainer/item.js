@@ -60,7 +60,7 @@ export const Productos = [
     precio: 300, 
     descripcion:"Ensalada de rúcula, también conocida como arúgula, con mango, aguacate y cebolla con vinagreta de naranja, y un poco de menta picada para completar su frescura.",
     stock: 2,
-    img:"https://recetasdepanama.com/wp-content/uploads/2019/11/558.jpg",
+    img:"https://www.wikichef.net/content/uploads/recipes/af9a0f_ensalada-de-mango-aguacate-y-rucula_w1000.jpg",
 },
 
     {id:"9",
