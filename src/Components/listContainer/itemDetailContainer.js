@@ -14,7 +14,7 @@ function ItemDetailContainer (){
             .then((res)=>{
             return res
             })
-            .then((resp)=> setElement(resp.find( element => element.id === detalleId )))
+            .then((resp)=> setElement(resp.find( element => element.id === detalleId)))
             .catch((err)=>console.log(err))
             .finally(()=> setLoad(false))
             },[detalleId])  
