@@ -9,8 +9,7 @@ SI ESTAN INTERESADOS PUEDEN INFORMARSE MAS SOBRE EL TEMA EN :
 
 1.https://schoolnurses.es/que-es-un-estilo-de-vida-saludable-y-como-conseguir-adoptarlo/
 
-2.https://www.abc.es/bienestar/alimentacion/
-abci-ensalada-perfecta-esto-debes-tener-cuenta-para-preparar-202004220426_noticia.html
+2.https://www.abc.es/bienestar/alimentacion/abci-ensalada-perfecta-esto-debes-tener-cuenta-para-preparar-202004220426_noticia.html
 
 3.https://www.cdc.gov/healthyweight/spanish/physicalactivity/index.html
 
