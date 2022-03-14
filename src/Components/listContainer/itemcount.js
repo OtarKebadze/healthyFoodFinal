@@ -1,9 +1,9 @@
 import {useState} from "react";
 import "./listcontainer.css"
 
-function ItemCount() {
-    const [cont, setCont] = useState(0);
-    let stock=10;
+function ItemCount({init, stock, onAdd}){
+
+    const [cont, setCont] = useState(init);
     const sumarContador= ()=>{
         if(cont >= stock){
             alert ("NO DISPONEMOS DE MAS U. EN STOCK")
@@ -17,14 +17,18 @@ function ItemCount() {
         }else{
             setCont(cont-1);
         }
+        
     }
-    
+    const agregarCarrito = ()=>{
+        onAdd(cont);
+    }
+
     return(
     <div className="contenedorContador">
     <button onClick={restarContador} className="boton">-</button>
     <label >{cont}</label>
     <button onClick={sumarContador} className="boton">+</button>
-    <button className="boton">Agregar a Carrito</button>
+    <button className="boton" onClick={agregarCarrito}>Agregar a Carrito</button>
     </div>
     )
 }

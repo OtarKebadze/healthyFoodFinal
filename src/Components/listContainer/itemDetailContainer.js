@@ -18,7 +18,6 @@ function ItemDetailContainer (){
             .catch((err)=>console.log(err))
             .finally(()=> setLoad(false))
             },[detalleId])  
-            console.log(element)  
     return(
     <>
         {
