@@ -4,24 +4,26 @@ import './App.css';
 import ItemDetailContainer from './Components/listContainer/itemDetailContainer';
 import ItemListContainer from './Components/listContainer/ItemListContainer';
 import Cart from "./Components/navbar/cart";
-import CartWidget from "./Components/navbar/CartWidget";
 import NavBar from './Components/navbar/navbar';
+import CartContextProv from "./context/cartContext";
 
 
 function App() {
   return (
-  <BrowserRouter>
-  <div>
+  <CartContextProv>
+    <BrowserRouter>
+    <div>
   <NavBar/>
-  <Routes>
-  <Route path="/" element={<ItemListContainer />}/>
-  <Route path="/detalle/:detalleId" element={<ItemDetailContainer />}/>
-  <Route path="/categoria/:categoriaId" element={<ItemListContainer />}/>
-  <Route path="/cart" element={<Cart/>}></Route>
-  <Route path="/*" element={<Navigate to="/" replace />}/>  
-  </Routes>
-  </div>
-  </BrowserRouter> 
+    <Routes>
+      <Route path="/" element={<ItemListContainer />}/>
+      <Route path="/detalle/:detalleId" element={<ItemDetailContainer />}/>
+      <Route path="/categoria/:categoriaId" element={<ItemListContainer />}/>
+      <Route path="/cart" element={<Cart/>}></Route>
+      <Route path="/*" element={<Navigate to="/" replace />}/>  
+    </Routes>
+    </div>
+    </BrowserRouter> 
+  </CartContextProv>
   )
 }
 

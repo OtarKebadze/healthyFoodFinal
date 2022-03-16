@@ -1,14 +1,19 @@
 import "./listcontainer.css"
 import ItemCount from "./itemcount"
 import IrCarrito from "./botonIrCarrito"
-import {useState} from "react";
+
+import { useState} from "react";
 import { Link } from "react-router-dom";
+import { useCartContext } from "../../context/cartContext";
 
 
 function ItemDetail({element}){
         const [cnt, setCnt] = useState(0)
+        console.log(cnt)
+        const {agregarCart} = useCartContext()
         const onAdd =(cnt)=>{
-        setCnt(cnt++)
+        setCnt(cnt)
+        agregarCart({...element, cnt})
         }
         return (
         <>
@@ -28,7 +33,6 @@ function ItemDetail({element}){
         </div>
         </>
         )
-        
 }
 
 export default ItemDetail
