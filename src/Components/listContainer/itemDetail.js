@@ -9,7 +9,6 @@ import { useCartContext } from "../../context/cartContext";
 
 function ItemDetail({element}){
         const [cnt, setCnt] = useState(0)
-        console.log(cnt)
         const {agregarCart} = useCartContext()
         const onAdd =(cnt)=>{
         setCnt(cnt)
