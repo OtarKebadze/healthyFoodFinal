@@ -25,7 +25,7 @@ function CartContextProv ({children}){
     const vaciarCart = ()=>{
     setCartList([])}
     function existeId(id){
-    return cartList.find(e=> e.d === id);
+    return cartList.find(e=> e.id === id);
     }
     const eliminaItem = (id)=>{
         setCartList(cartList.filter(i => i.id !== id))
