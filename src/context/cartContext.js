@@ -10,26 +10,34 @@ function CartContextProv ({children}){
     const [cartList, setCartList] = useState([])
     const agregarCart = (item)=>{
         if (existeId(item && item.id)){
-        alert("ESTE PRODUCTO YA EXISTE EN EL CARRITO")
-        return
-        }else{
-        setCartList ([...cartList , item])
-        }}
-
-
+        alert("Este item ya esta en el carrito")
+        return;
+        }
+        return setCartList ([...cartList , item])
+    }
+    const cantTotal = ()=>{
+            let totalCantidad=0;
+            cartList.map( elem => {
+            totalCantidad += elem.cantidad
+            });
+            return totalCantidad
+            }
     const vaciarCart = ()=>{
     setCartList([])}
-
     function existeId(id){
-        const existe= cartList.find(e=>e.id === id)
-        return existe
+    return cartList.find(e=> e.d === id);
     }
-    console.log(existeId())
+    const eliminaItem = (id)=>{
+        setCartList(cartList.filter(i => i.id !== id))
+    }
+
         return (
         <CartContext.Provider value={{
             cartList,
             agregarCart,
-            vaciarCart
+            vaciarCart,
+            eliminaItem,
+            cantTotal
         }}>
             {children}
         </CartContext.Provider>

@@ -12,7 +12,7 @@ function ItemDetail({element}){
         const {agregarCart} = useCartContext()
         const onAdd =(cnt)=>{
         setCnt(cnt)
-        agregarCart({...element, cnt})
+        agregarCart({...element, cantidad : cnt})
         }
         return (
         <>
