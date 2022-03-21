@@ -6,7 +6,7 @@ function CartWidget(){
     const {cantTotal}=useCartContext()
     
     return(
-        <div className="contenedorCarrito"><img src={imagenCarrito}/>{cantTotal()}</div>
+        <div className="contenedorCarrito"><img src={imagenCarrito}/><p>{cantTotal()}</p></div>
     )
 }
 export default CartWidget

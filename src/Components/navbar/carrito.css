@@ -3,17 +3,72 @@
     width: fit-content;
     margin:1rem 0rem 0rem 2rem;
     padding-right: 1rem;
-    border-radius: 1rem;
-    background-color:#14793e9d;
-    filter: drop-shadow(4px 5px 2px black);
     color: white;
+    display: flex;
+}
+.contenedorCarrito p{
+    color: black;
+    border: .125rem solid black;
+    padding: .2rem;
+    margin-left: 1rem;
+    border-radius: .5rem;
 }
 .contenedor__navbar div img{
     width: 50px;
     height: 50px;
 }
 .itemCart{
-    background-color: cyan;
-    width: 200px;
-    height: 200px;
+    background-color: #e0d19b;
+    border: 2px solid black;
+    border-radius: .5rem;
+    width: 50rem;
+    height: fit-content;
+    display: flex;
+}
+.section1 {
+    width: 90%;
+    display: flex;
+}
+.section1 p{
+    width: 50%;
+    margin-left: 1rem;
+    font-size: 1.5rem;
+}
+.section2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+}
+.section2 button{
+    width: 3rem;
+    height: 3rem;
+    border-width: .5rem;
+    border-radius: .5rem;
+    border-color: #97DBAE;
+}
+.contenedorCards{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.contenedorCart{
+    display: flex;
+}
+.contenedorBoton{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedorBoton button{
+    background-color: White;
+    width: 8rem;
+    height: 3rem;
+    border-radius: 1rem;
+    border-width: 1rem;
+    border-color: #97DBAE;
 }

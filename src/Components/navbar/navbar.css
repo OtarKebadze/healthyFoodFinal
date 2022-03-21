@@ -1,4 +1,5 @@
 .contenedor__navbar{
+    margin-top: 2rem;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -6,9 +7,11 @@
 
 .navbar{
     border-radius: 2rem;
-    background-color: #14793e9d;
     width: 1000px;
     height: 80px;
+    border: 2px solid black;
+    background-color: #7aa88dd2;
+    filter: drop-shadow(4px 5px 2px black);
 }
 .navbar__links{
     margin-top: 1.5rem;
@@ -17,7 +20,7 @@
     filter: drop-shadow(4px 5px 2px rgb(0, 0, 0));
 }
 .titulo{
-    background-color: #38c0877c;
+    background-color: #97DBAE;
     color: black;
     font-weight: 1000;
     border: 1px black solid;
@@ -33,12 +36,4 @@
     margin-top: -20px;
     width: 300px;
     border-radius: 1rem;
-}
-.prueba{
-    border: 1px solid black;
-    background-color: white;
-    text-align: center;
-    width: 100%;
-    display: flex;
-    justify-content: center;
 }

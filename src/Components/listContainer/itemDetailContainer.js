@@ -22,10 +22,9 @@ function ItemDetailContainer (){
     <>
         {
         load ? <div className="centrado"><img src={logo}/></div>
-            :
-    <div className="contenedorDetalle">
-        <ItemDetail element={element} />
-    </div>}
+             :  <div className="contenedorDetalle">
+        <       ItemDetail element={element} />
+                </div>}
     </>
     )
 }
