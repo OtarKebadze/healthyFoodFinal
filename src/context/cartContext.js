@@ -30,6 +30,35 @@ function CartContextProv ({children}){
     const eliminaItem = (id)=>{
         setCartList(cartList.filter(i => i.id !== id))
     }
+    const realizarCompra = ()=>{
+        if (cantTotal() === 0) {
+        alert ("USTED NO TIENE PRODUCTOS EN EL CARRITO")
+        } else {
+        alert("GRACIAS POR REALIZAR SU COMPRA");
+        setCartList([])
+        return
+        }
+    }
+    const condition=()=>{
+        return true
+    }
+    const actualizarMasCantidad = ()=>{
+        let item = cartList.find(e=> e.id)
+        if(item.cantidad >= 1 && item.cantidad < item.stock) {
+        item.cantidad++
+        return setCartList ([...cartList])
+        }
+    }
+    
+    const actualizarMenosCantidad = ()=>{
+        let item = cartList.find(e=> e.id)
+        if(item.cantidad > 1){
+        item.cantidad--
+        return setCartList([...cartList])
+    }else if (item.cantidad = 1 ){
+    alert("EL MINIMO DE LA COMPRA ES 1")
+    }
+}
 
         return (
         <CartContext.Provider value={{
@@ -37,7 +66,11 @@ function CartContextProv ({children}){
             agregarCart,
             vaciarCart,
             eliminaItem,
-            cantTotal
+            cantTotal,
+            realizarCompra,
+            condition,
+            actualizarMasCantidad, 
+            actualizarMenosCantidad
         }}>
             {children}
         </CartContext.Provider>

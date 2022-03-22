@@ -1,3 +1,38 @@
+#titulo{
+    color: red;
+    font-weight: 1000;
+    font-size: 2rem;
+    text-align: center;
+}
+.contenedorMensaje{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contenedorMensaje button{
+    border-width: 1rem;
+}
+.contenedorMensaje2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+    width: 50%;
+    padding: 2rem;
+    animation:  blink 2s linear infinite;
+}
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        border: 3px solid rgb(255, 0, 0);
+}}
 .contenedorCarrito{
     height: fit-content;
     width: fit-content;
@@ -61,14 +96,15 @@
 .contenedorBoton{
     width: 30%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 .contenedorBoton button{
-    background-color: White;
     width: 8rem;
-    height: 3rem;
+    height: 4rem;
     border-radius: 1rem;
-    border-width: 1rem;
-    border-color: #97DBAE;
+    border-width: .5rem;
+    background-color: #97DBAE;
+    margin: 1rem;
 }

@@ -2,10 +2,12 @@ import CartWidget from "./CartWidget.js"
 import "./navbar.css"
 import imagenNombre from "./nombreEmpresa.png"
 import {NavLink} from "react-router-dom"
-import Cart from "./cart.js"
+import { useCartContext } from "../../context/cartContext.js"
+
 
 function NavBar (){
 return(
+<>
 <div className="contenedor__navbar">
 <nav className="navbar">
 <ul className="navbar__links">
@@ -18,6 +20,7 @@ return(
 </nav>
 <CartWidget/>
 </div>
+</>
 )
 }
 
