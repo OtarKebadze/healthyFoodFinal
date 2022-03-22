@@ -59,7 +59,7 @@ function CartContextProv ({children}){
         item.cantidad--
         return setCartList([...cartList])
     }else if (item.cantidad = 1 ){
-    alert("EL MINIMO DE LA COMPRA ES 1")
+    swal("EL MINIMO DE LA COMPRA ES 1","", "error")
     }
 }
         console.log(cartList)
