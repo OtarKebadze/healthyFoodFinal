@@ -1,4 +1,5 @@
 import { createContext , useState , useContext } from "react";
+import swal from "sweetalert";
 
 
 
@@ -10,7 +11,7 @@ function CartContextProv ({children}){
     const [cartList, setCartList] = useState([])
     const agregarCart = (item)=>{
         if (existeId(item && item.id)){
-        alert("ESTE PRODUCTO YA EXISTE EN EL CARRITO")
+        swal("ESTE PRODUCTO YA EXISTE EN EL CARRITO", "" , "error")
         return
         }
         return setCartList ([...cartList , item])
@@ -32,9 +33,9 @@ function CartContextProv ({children}){
     }
     const realizarCompra = ()=>{
         if (cantTotal() === 0) {
-        alert ("USTED NO TIENE PRODUCTOS EN EL CARRITO")
+        alert ("USTED NO TIENE PRODUCTOS EN EL CARRITO" , "" , "error")
         } else {
-        alert("GRACIAS POR REALIZAR SU COMPRA");
+        swal("GRACIAS POR REALIZAR SU COMPRA" , "" , "success");
         setCartList([])
         return
         }
@@ -48,7 +49,7 @@ function CartContextProv ({children}){
         item.cantidad++
         return setCartList ([...cartList])
         }else if(item.cantidad === item.stock){
-        return alert ("NO DISPONEMOS DE MAS UNIDADES EN STOCK")
+        return swal("NO DISPONEMOS DE MAS UNIDADES EN STOCK", "" ,"error")
         }
     }
     
