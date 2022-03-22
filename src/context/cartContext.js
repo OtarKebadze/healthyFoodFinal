@@ -10,14 +10,14 @@ function CartContextProv ({children}){
     const [cartList, setCartList] = useState([])
     const agregarCart = (item)=>{
         if (existeId(item && item.id)){
-        alert("Este item ya esta en el carrito")
-        return;
+        alert("ESTE PRODUCTO YA EXISTE EN EL CARRITO")
+        return
         }
         return setCartList ([...cartList , item])
     }
     const cantTotal = ()=>{
             let totalCantidad=0;
-            cartList.map( elem => {
+            cartList.forEach( elem => {
             totalCantidad += elem.cantidad
             });
             return totalCantidad
@@ -47,6 +47,8 @@ function CartContextProv ({children}){
         if(item.cantidad >= 1 && item.cantidad < item.stock) {
         item.cantidad++
         return setCartList ([...cartList])
+        }else if(item.cantidad === item.stock){
+        return alert ("NO DISPONEMOS DE MAS UNIDADES EN STOCK")
         }
     }
     
@@ -59,7 +61,7 @@ function CartContextProv ({children}){
     alert("EL MINIMO DE LA COMPRA ES 1")
     }
 }
-
+        console.log(cartList)
         return (
         <CartContext.Provider value={{
             cartList,
