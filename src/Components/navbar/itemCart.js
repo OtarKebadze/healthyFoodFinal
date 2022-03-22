@@ -24,7 +24,7 @@ function ItemCart(){
     <section className="section1"> 
     <p>{item.nombre}</p>
     <p>Cantidad: 
-    <button onClick={actualizarMenosCantidad}>-</button> {item.cantidad} <button onClick={actualizarMasCantidad}>+</button>
+    <button onClick={()=>actualizarMenosCantidad(item.id)}>-</button> {item.cantidad} <button onClick={()=>actualizarMasCantidad(item.id)}>+</button>
     </p>
     </section >
     <section className="section2">

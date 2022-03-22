@@ -42,16 +42,16 @@ function CartContextProv ({children}){
     const condition=()=>{
         return true
     }
-    const actualizarMasCantidad = ()=>{
-        let item = cartList.find(e=> e.id)
+    const actualizarMasCantidad = (id)=>{
+        let item = cartList.find(e=> e.id===id)
         if(item.cantidad >= 1 && item.cantidad < item.stock) {
         item.cantidad++
         return setCartList ([...cartList])
         }
     }
     
-    const actualizarMenosCantidad = ()=>{
-        let item = cartList.find(e=> e.id)
+    const actualizarMenosCantidad = (id)=>{
+        let item = cartList.find(e=> e.id===id)
         if(item.cantidad > 1){
         item.cantidad--
         return setCartList([...cartList])
