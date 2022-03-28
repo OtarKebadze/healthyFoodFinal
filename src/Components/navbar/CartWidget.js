@@ -4,7 +4,7 @@ import imagenCarrito from "./carrito-de-supermercado.png"
 import "./carrito.css"
 
 function CartWidget(){
-    const {cantTotal,condition}=useCartContext()
+    const {cantTotal}=useCartContext()
 
     function cond (){
         if (cantTotal() === 0) {

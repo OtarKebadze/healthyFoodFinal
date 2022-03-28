@@ -7,6 +7,7 @@ const CartContext = createContext([])
 export const useCartContext = () => useContext(CartContext)
 
 
+
 function CartContextProv ({children}){
     const [cartList, setCartList] = useState([])
     const agregarCart = (item)=>{
@@ -31,17 +32,11 @@ function CartContextProv ({children}){
     const eliminaItem = (id)=>{
         setCartList(cartList.filter(i => i.id !== id))
     }
-    const realizarCompra = ()=>{
-        if (cantTotal() === 0) {
-        alert ("USTED NO TIENE PRODUCTOS EN EL CARRITO" , "" , "error")
-        } else {
-        swal("GRACIAS POR REALIZAR SU COMPRA" , "" , "success");
-        setCartList([])
-        return
-        }
-    }
     const condition=()=>{
         return true
+    }
+    const confirmaDatos = ()=>{
+        console.log("hola")
     }
     const actualizarMasCantidad = (id)=>{
         let item = cartList.find(e=> e.id===id)
@@ -52,7 +47,13 @@ function CartContextProv ({children}){
         return swal("NO DISPONEMOS DE MAS UNIDADES EN STOCK", "" ,"error")
         }
     }
-    
+    const precioTotal = ()=>{
+        let precioTotal=0
+        cartList.forEach( e => {
+        precioTotal += e.precio * e.cantidad
+        })
+        return precioTotal
+    }
     const actualizarMenosCantidad = (id)=>{
         let item = cartList.find(e=> e.id===id)
         if(item.cantidad > 1){
@@ -62,18 +63,34 @@ function CartContextProv ({children}){
     swal("EL MINIMO DE LA COMPRA ES 1","", "error")
     }
 }
+    const precioPorProducto = ()=>{ 
+        let precio=0
+        let cantidad=0
+        let precioProdTot =0
+        cartList.forEach( e =>{
+        precio = e.precio
+        cantidad = e.cantidad
+        precioProdTot = precio*cantidad
+        }
+        )
+        return precioProdTot
+    }
         console.log(cartList)
+        console.log(precioPorProducto())
         return (
         <CartContext.Provider value={{
             cartList,
+            setCartList,
+            confirmaDatos,
             agregarCart,
             vaciarCart,
             eliminaItem,
             cantTotal,
-            realizarCompra,
             condition,
             actualizarMasCantidad, 
-            actualizarMenosCantidad
+            actualizarMenosCantidad,
+            precioTotal,
+            precioPorProducto,
         }}>
             {children}
         </CartContext.Provider>

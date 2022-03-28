@@ -83,7 +83,7 @@ export const Productos = [
     {id:"10",
     nombre :'Ensalada Waldorf',
     precio: 290,
-    descripcion:"Consiste en trozos de manzanas verdes, mix de frutos secos, juliana de repollo blanco y troncos del apio picada junto a una mayonesa .",
+    descripcion:"Consiste en trozos de manzanas verdes, mix de frutos secos, juliana de repollo blanco y troncos del apio picada junto a una mayonesa.",
     stock: 10,
     categoria:"Vegetariana",
     img:"https://cdn1.cocina-familiar.com/recetas/ensalada-waldorf.JPG",

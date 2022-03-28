@@ -1,6 +1,6 @@
 import { useState , useEffect } from "react";
 import { getFetch } from "./item";
-import ItemCount from "./itemcount";
+import { collection, getDocs, getFirestore, query, where} from "firebase/firestore"
 import logo from "./img/carga.gif";
 import { Link, useParams } from "react-router-dom";
 
@@ -9,25 +9,47 @@ function ItemList(){
     const [prods, setProds]= useState([])
     const [load, setLoad]= useState(true)
     const { categoriaId } = useParams()
-    useEffect(() => {
-        if (categoriaId) {
-        getFetch
-        .then((res)=>{
-        return res
-        })
-        .then((resp)=> setProds(resp.filter( prod => prod.categoria === categoriaId)))
-    .catch(err=>console.log(err))
+    // GET FETCH
+    // useEffect(() => {
+    //     if (categoriaId) {
+    //     getFetch
+    //     .then((res)=>{
+    //     return res
+    //     })
+    //     .then((resp)=> setProds(resp.filter( prod => prod.categoria === categoriaId)))
+    // .catch(err=>console.log(err))
+    //     .finally(()=>setLoad(false))
+    //     } else {
+    // getFetch
+    // .then((res)=>{
+    // return res
+    // })
+    // .then((resp)=> setProds(resp))
+    // .catch(err=>console.log(err))
+    // .finally(()=>setLoad(false))
+    //     }
+    //         },[categoriaId])
+
+    // FIREBASE
+     useEffect(() => {
+    if (categoriaId) {
+        const db = getFirestore()
+        const itemCollection = collection (db,"items")
+        const qFilter=query(itemCollection,
+        where("categoria","==", categoriaId))
+        getDocs(qFilter)
+        .then(resp => setProds(resp.docs.map(item =>({id:item.id, ... item.data()}))))
+        .catch(err=>console.log(err))
         .finally(()=>setLoad(false))
-        } else {
-    getFetch
-    .then((res)=>{
-    return res
-    })
-    .then((resp)=> setProds(resp))
-    .catch(err=>console.log(err))
-    .finally(()=>setLoad(false))
-        }
-            },[categoriaId])
+    }else{
+            const db = getFirestore()
+            const itemCollection = collection (db,"items")
+            getDocs(itemCollection)
+            .then(resp => setProds(resp.docs.map(item =>({id:item.id, ... item.data()}))))
+            .catch(err=>console.log(err))
+            .finally(()=>setLoad(false))
+    }}, [categoriaId])
+
 return(
 <>  
     { load  ? <img src={logo}/>

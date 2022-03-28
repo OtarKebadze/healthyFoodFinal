@@ -100,11 +100,20 @@
     justify-content: center;
     align-items: center;
 }
-.contenedorBoton button{
+.contenedorBoton button , #submit{
     width: 8rem;
     height: 4rem;
     border-radius: 1rem;
     border-width: .5rem;
     background-color: #97DBAE;
     margin: 1rem;
+}
+.contenedorDatos{
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.contenedorDatos p{
+    
 }

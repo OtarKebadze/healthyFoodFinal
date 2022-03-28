@@ -1,9 +1,26 @@
 
+import swal from "sweetalert";
 import { useCartContext } from "../../context/cartContext";
+import Formulario from "../listContainer/formulario/formulario";
 import CompraVacia from "./compraVacia";
 
 function ItemCart(){
-    const { cartList , vaciarCart, eliminaItem, realizarCompra, cantTotal, actualizarMenosCantidad, actualizarMasCantidad} = useCartContext()
+    const { setCartList, precioTotal , precioPorProducto , cartList , vaciarCart, eliminaItem, cantTotal, actualizarMenosCantidad, actualizarMasCantidad} = useCartContext()
+    
+    
+    
+    const realizarCompra = ()=>{
+        if (cantTotal() === 0) {
+        alert ("USTED NO TIENE PRODUCTOS EN EL CARRITO" , "" , "error")
+        } else {
+        swal("GRACIAS POR REALIZAR SU COMPRA" , "" , "success");
+        setCartList([])
+        return
+        }
+    }
+
+
+
 
     function cond (){
         if (cantTotal() === 0) {
@@ -34,8 +51,8 @@ function ItemCart(){
     )}
     </div>
     <div className="contenedorBoton">
+    <div><Formulario /></div>
     <section><button onClick={vaciarCart}>Vaciar Carrito</button></section>
-    <section><button onClick={realizarCompra}>Terminar Compra</button></section>
     </div>
     </div>
     )
