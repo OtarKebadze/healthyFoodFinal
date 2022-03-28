@@ -1,9 +1,10 @@
 import { useCartContext } from "../../../context/cartContext"
+import Fecha from "./fecha"
 
 function Formulario(){
 
     const {realizarCompra , precioTotal} = useCartContext()
-
+    
     return(
     <div>
         <form className="contenedorDatos">
@@ -13,6 +14,7 @@ function Formulario(){
         <input type="email" name="Mail" placeholder="Ingrese su Mail" required />
         <label >Telefono</label>
         <input type="number" name="Telefono" placeholder="123-456-789" required />
+        <section>Fecha actual: <Fecha /></section>
         <p>El <b>TOTAL</b> es de : ${precioTotal()}</p>
         <input type="submit" id="submit" value="Terminar Compra" onClick={realizarCompra}/>
         </form>

@@ -114,6 +114,6 @@
     align-items: center;
     flex-direction: column;
 }
-.contenedorDatos p{
-    
+.contenedorDatos section{
+    margin: 1rem;
 }

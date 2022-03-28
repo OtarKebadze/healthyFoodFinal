@@ -75,8 +75,7 @@ function CartContextProv ({children}){
         )
         return precioProdTot
     }
-        console.log(cartList)
-        console.log(precioPorProducto())
+
         return (
         <CartContext.Provider value={{
             cartList,

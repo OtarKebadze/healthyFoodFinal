@@ -90,11 +90,11 @@ export const Productos = [
 }
     ];
 
-export const getFetch = new Promise((resolve)=>{
-        let productos = true
-        if (productos === true){
-            setTimeout(() => {
-            resolve(Productos)
-            },2000);
-        }
-    })
+// export const getFetch = new Promise((resolve)=>{
+//         let productos = true
+//         if (productos === true){
+//             setTimeout(() => {
+//             resolve(Productos)
+//             },2000);
+//         }
+//     })
