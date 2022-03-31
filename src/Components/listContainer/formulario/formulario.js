@@ -1,6 +1,5 @@
 import { useCartContext } from "../../../context/cartContext"
-import {addDoc, collection, db, getFirestore} from "firebase/firestore"
-import Fecha from "./fecha"
+import {addDoc, collection, getFirestore} from "firebase/firestore"
 import swal from "sweetalert"
 
 function Formulario(){
@@ -10,19 +9,25 @@ function Formulario(){
     const sendOrder= (e)=>{
         e.preventDefault();
         let order = {}
+        const date = ()=>{
+        let f = new Date();
+        return f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear();
+        }
         const nameBuyer=document.getElementById("name").value;
         const emailBuyer= document.getElementById("mail").value;
         const phoneBuyer= document.getElementById("phone").value;
         order.buyer = {name:nameBuyer, email: emailBuyer,
         phone: phoneBuyer}
-        order.total=precioTotal();
+        order.date= date();
+        order.total= precioTotal();
         order.items= cartList.map(item=>{
         const id = item.id;
         const nombre = item.nombre;
         const precio= item.cantidad * item.precio;
+
         return {id,nombre,precio}
         })
-        
+        console.log(order)
         const db = getFirestore();
             const orderCollection =  collection (db, "orders");
             addDoc(orderCollection, order)
@@ -40,7 +45,6 @@ function Formulario(){
         <input id="mail" type="email" name="Mail" placeholder="Ingrese su Mail" required/>
         <label >Telefono</label>
         <input id="phone" type="number" name="Telefono" placeholder="123-456-789" required/>
-        <section>Fecha actual: <Fecha /></section>
         <p>El <b>TOTAL</b> es de : ${precioTotal()}</p>
         <input type="submit" onClick={sendOrder} value="Realizar Compra"/>
         </form>
