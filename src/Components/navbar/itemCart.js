@@ -1,27 +1,10 @@
-
-import swal from "sweetalert";
 import { useCartContext } from "../../context/cartContext";
 import Formulario from "../listContainer/formulario/formulario";
 import CompraVacia from "./compraVacia";
 
 function ItemCart(){
-    const { setCartList, precioTotal , precioPorProducto , cartList , vaciarCart, eliminaItem, cantTotal, actualizarMenosCantidad, actualizarMasCantidad} = useCartContext()
+    const { cartList , vaciarCart, eliminaItem, cantTotal, actualizarMenosCantidad, actualizarMasCantidad} = useCartContext()
     
-    
-    
-    const realizarCompra = ()=>{
-        if (cantTotal() === 0) {
-        alert ("USTED NO TIENE PRODUCTOS EN EL CARRITO" , "" , "error")
-        } else {
-        swal("GRACIAS POR REALIZAR SU COMPRA" , "" , "success");
-        setCartList([])
-        return
-        }
-    }
-
-
-
-
     function cond (){
         if (cantTotal() === 0) {
         return true
@@ -32,7 +15,9 @@ function ItemCart(){
     if (cond()=== true) {
     return <CompraVacia/>
     }
+
     return(
+
     <div className="contenedorCart">
 <div className="contenedorCards">
     {cartList.map(item =>
@@ -56,6 +41,7 @@ function ItemCart(){
     </div>
     </div>
     )
+    
 }
 
 export default ItemCart

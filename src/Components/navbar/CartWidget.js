@@ -1,5 +1,4 @@
 import { useCartContext } from "../../context/cartContext"
-import { useEffect , useState } from "react"
 import imagenCarrito from "./carrito-de-supermercado.png"
 import "./carrito.css"
 

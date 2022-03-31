@@ -2,7 +2,7 @@ import CartWidget from "./CartWidget.js"
 import "./navbar.css"
 import imagenNombre from "./nombreEmpresa.png"
 import {NavLink} from "react-router-dom"
-import { useCartContext } from "../../context/cartContext.js"
+
 
 
 function NavBar (){
