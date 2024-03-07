@@ -8,7 +8,7 @@ function Formulario(){
 
     const {cartList, precioTotal} = useCartContext()
     
-    const sendOrder= (e)=>{
+    const sendOrder= ()=>{
         let order = {}
         const date = ()=>{
         let f = new Date();
