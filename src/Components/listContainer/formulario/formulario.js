@@ -4,6 +4,8 @@ import swal from "sweetalert"
 
 function Formulario(){
 
+    const { vaciarCart} = useCartContext()
+
     const {cartList, precioTotal} = useCartContext()
     
     const sendOrder= (e)=>{
@@ -26,13 +28,13 @@ function Formulario(){
 
         return {id,nombre,precio}
         })
-        console.log(order)
         const db = getFirestore();
             const orderCollection =  collection (db, "orders");
             addDoc(orderCollection, order)
             .then(resp => swal("EL CODIGO DE SU COMPRA ES : " + resp.id , "", "success"))
             .catch(err => console.log(err))
             .finally(()=> console.log("Compra Terminada"))
+        vaciarCart()
     }
     
     return(
